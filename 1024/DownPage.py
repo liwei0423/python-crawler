@@ -8,7 +8,7 @@
 import urllib.request,socket,re,sys,os
 
 #定义文件保存路径
-targetPath = "D:\\temp\\1024\\1"
+targetPath = "G:\\temp\\"
 
 def openUrl(url):
 	headers = {
@@ -21,7 +21,7 @@ def openUrl(url):
 	downImg(data)
 
 def downImg(data):
-	for link,t in set(re.findall(r'([http|https]:[^\s]*?(jpg|png|gif))', str(data))):
+	for link,t in set(re.findall(r'([http|https]:[^\s]*?(.jpg|.png|.gif))', str(data))):
 
 	    if link.startswith('s'):
 	    	link='http'+link
@@ -47,5 +47,5 @@ def saveFile(path):
     return t
 
 
-url = "http://cl.oiee.biz/htm_data/16/1611/2115193.html"
+url = "https://www.csdn.net/"
 openUrl(url)
